@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 26-30</title>
+</head>
+<body>
+    <script>
+
+// -----ANSWER NO 1-------
+
+
+let total = 3.45214;
+document.writeln( 'number: ' + total + '<br>' );
+
+document.writeln('Round off value : ' + Math.round(total) + '<br>');
+
+document.writeln('floor value : ' + Math.floor(total) + '<br>');
+
+document.writeln('ceil value : ' + Math.ceil(total) + '<br>');
+
+document.writeln('' + '<br>');
+
+// -----ANSWER NO 2-------
+
+let negvalue = -2.673;
+document.writeln( 'number: ' + negvalue + '<br>' );
+
+document.writeln('Round off value : ' + Math.round(negvalue) + '<br>');
+
+document.writeln('floor value : ' + Math.floor(negvalue) + '<br>');
+
+document.writeln('ceil value : ' + Math.ceil(negvalue) + '<br>');
+
+document.writeln('' + '<br>');
+
+// -----ANSWER NO 3-------
+
+
+
+let num1 = -4;
+let  num2 = 5;
+
+let  abs1 = Math.abs(num1);
+let  abs2 = Math.abs(num2);
+
+document.writeln("The absolute value of " + num1 + " is " + abs1 + "<br>");
+document.writeln("The absolute value of " + num2 + " is " + abs2);
+
+// -----ANSWER NO 4-------
+
+
+for (var i = 1; i <= 2; i++) {
+    var roll = Math.floor(Math.random() * 6) + 1;
+    document.writeln("Dice " + i + " result: " + roll + "<br>");
+}
+
+// -----ANSWER NO 5-------
+
+    let toss = Math.round(Math.random());
+
+    let result = (toss < 1) ? "Heads" : "Tails";
+
+    document.writeln("<h3>The coin shows: " + result + "</h3>");
+    document.writeln("Generated value: " + toss);
+
+// -----ANSWER NO 6-------
+
+
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+    // Display the result in the browser
+    document.writeln("<h1>Your random number between 1 to 100  is: " + randomNumber + "</h1>");
+
+// -----ANSWER NO 7-------
+
+    let input = prompt("Please enter your weight");
+
+    let weight = parseFloat(input);
+
+    if (!isNaN(weight)) {
+  
+        document.writeln("<h2>Confirmed: Your weight is " + weight + " kg</h2>");
+    } else {
+
+        document.writeln("<h2>Invalid input. Please enter a numerical value.</h2>");
+    }
+
+
+// -----ANSWER NO 8-------
+
+
+const secretNumber = Math.floor(Math.random() * 10) + 1;
+
+
+const userGuess = Number(prompt("Guess a number between 1 and 10:"));
+
+if (userGuess === secretNumber) {
+    console.log("Congratulations! You guessed the secret number!");
+    alert("Congratulations! You guessed the secret number!");
+} else {
+    console.log("Not quite! The secret number was " + secretNumber);
+    alert("Not quite! The secret number was " + secretNumber);
+}
+
+
+
+
+
+    </script>
+</body>
+</html>

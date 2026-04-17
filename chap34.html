@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter-31to34</title>
+</head>
+<body>
+    <script>
+
+
+// ANSWER NO 1
+
+  var currentDateTime = new Date();
+
+  document.writeln("The current date and time is: " + currentDateTime);
+document.writeln("" + "<br>");
+
+  
+// ANSWER NO 2
+
+const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+
+const d = new Date();
+
+const currentMonth = monthNames[d.getMonth()];
+
+alert("The current month is: " + currentMonth);
+document.writeln("" + "<br>");
+
+// ANSWER NO 3
+
+const fullDay = new Date().toLocaleString('en-US', { weekday: 'long' });
+
+const shortDay = fullDay.slice(0, 3);
+
+alert("Today is " + shortDay);
+
+
+
+// ANSWER NO 4
+
+const dayIndex = new Date().getDay();
+
+if (dayIndex === 0 || dayIndex === 6) {
+    alert("It’s Fun Day!");
+} else {
+    alert("It's a regular workday.");
+}
+
+
+// ANSWER NO 5
+
+const currentDate = new Date().getDate();
+
+if (currentDate < 16) {
+    alert("First fifteen days of the month");
+} else {
+    alert("Last days of the month");
+}
+
+
+
+
+// ANSWER NO 6
+
+let curren = new Date();
+
+let elapsedMilliseconds = curren.getTime();
+
+let elapsedMinutes = elapsedMilliseconds / (1000 * 60);
+
+document.writeln("Current Date: " + curren + "<br>");
+document.writeln("Elapsed milliseconds since January 1, 1970: " + elapsedMilliseconds + "<br>");
+document.writeln("Elapsed minutes since January 1, 1970: " + elapsedMinutes);
+document.writeln("" + "<br>");
+
+
+// ANSWER NO 7
+
+const currentHour = new Date().getHours(); 
+
+if (currentHour < 12) {
+    alert("It's AM");
+} else {
+    alert("It's PM");
+}
+
+document.writeln("" + "<br>");
+
+// ANSWER NO 8
+
+let laterDate = new Date(2020, 11, 31);
+
+document.writeln("Last day of the month and year" + laterDate);
+document.writeln("" + "<br>");
+
+// ANSWER NO 9
+
+var today = new Date();
+
+var ramadanDate = new Date("June 18, 2015");
+
+var diffInMs = today - ramadanDate;
+
+var daysPassed = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+document.writeln(" " + "<br>");
+document.writeln(daysPassed + " days have passed since 1st Ramadan, 2015<br>");
+document.writeln(" " + "<br>");
+
+// ANSWER NO 10
+
+var referenceDate = new Date();
+
+var startOf2015 = new Date("January 1, 2015");
+
+var diffInMs10 = referenceDate - startOf2015;
+
+var secondsPassed = Math.floor(diffInMs10 / 1000);
+document.writeln(" " + "<br>");
+document.writeln("On reference date " + referenceDate + ", " + secondsPassed + " seconds had passed since beginning of 2015");
+
+
+
+//  ANSWER NO 11
+
+const date = new Date();
+
+date.setFullYear(date.getFullYear() - 100);
+
+alert("The date 100 years ago was: " + date.toDateString());
+
+//  ANSWER NO 12
+
+
+const age = prompt("Please enter your age:");
+
+const currentYear = new Date().getFullYear();
+
+const birthYear = currentYear - parseInt(age);
+
+if (age && !isNaN(birthYear)) {
+    document.body.innerHTML = `<h1>Your birth year is: ${birthYear}</h1>`;
+} else {
+    document.body.innerHTML = `<h1>Please enter a number!</h1>`;
+}
+
+        </Script>
+</body>
+</html>

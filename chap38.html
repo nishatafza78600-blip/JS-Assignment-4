@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAPTER 35-38</title>
+</head>
+<body>
+    
+<script>
+
+// ANSER N0 1
+
+function displayDateTime() {
+
+    const now = new Date();
+
+    const dateTimeString = now.toLocaleString();
+
+    let displayElement = document.getElementById("clock");
+    
+    if (!displayElement) {
+        displayElement = document.createElement("div");
+        displayElement.id = "clock";
+        displayElement.style.fontSize = "24px";
+        displayElement.style.fontFamily = "sans-serif";
+        document.body.appendChild(displayElement);
+    }
+
+    displayElement.innerHTML = `<strong>Current Date & Time:</strong> ${dateTimeString}`;
+}
+
+displayDateTime();
+
+setInterval(displayDateTime, 1000);
+
+
+
+// ANSER N0 2
+function greetUser() {
+  
+    let firstName = prompt("Please enter your first name:");
+    let lastName = prompt("Please enter your last name:");
+
+    if (firstName && lastName) {
+  
+        let fullName = firstName + " " + lastName;
+        alert("Hello, " + fullName + "! Glad to have you here.");
+    } else {
+        alert("Entry incomplete. Please provide both names.");
+    }
+}
+
+
+greetUser();
+
+// ANSER N0 3
+
+function greetNum(){
+
+    let firstNum = prompt("Enter a num");
+     let lastNum = prompt("Enter another num");
+
+     if(firstNum && lastNum){
+        let  fullNum = firstNum + " " +lastNum;
+        alert("the sum is" + fullNum)
+     } else {
+        alert("add numbers")
+     }
+
+}
+greetNum()
+
+// ANSER N0 4
+
+function calculate(num1, num2, operator) {
+    let result;
+
+    switch (operator) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+          
+            result = num2 !== 0 ? num1 / num2 : "Error: Division by zero";
+            break;
+        default:
+            result = "Invalid Operator";
+    }
+
+    document.write("<h3>Calculation Result</h3>");
+    document.write("The result of " + num1 + " " + operator + " " + num2 + " is: <b>" + result + "</b>");
+    
+    return result;
+}
+
+calculate(10, 5, '*');
+document.write("<br>"+ "<br>")
+
+// ANSER N0 5
+
+function squareAll(...numbers) {
+    return numbers.map(n => n * n);
+}
+
+document.write(squareAll(2, 4, 6)); 
+document.write("<br>"+ "<br>")
+
+// ANSER N0 6
+
+function factorial(n) {
+    if (n < 0) return "Undefined"; 
+    let result = 1;
+    for (let i = 2; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+document.write(factorial(5));
+document.write("<br>"+ "<br>")
+
+// ANSER N0 7
+
+function generateCounting() {
+
+    let startInput = prompt("Enter the starting number:");
+    let endInput = prompt("Enter the ending number:");
+
+    let start = parseInt(startInput);
+    let end = parseInt(endInput);
+
+    if (isNaN(start) || isNaN(end)) {
+        document.write("<h3 style='color: red;'>please enter numbers</h3>");
+        return;
+    }
+
+    document.write("<h2>Counting Result</h2>");
+    document.write("<div style='word-wrap: break-word; line-height: 2;'>");
+
+    // Counting Loop
+    if (start <= end) {
+   
+        for (let i = start; i <= end; i++) {
+            document.write("<b>" + i + "</b>" + (i === end ? "" : ", "));
+        }
+    } else {
+      
+        for (let i = start; i >= end; i--) {
+            document.write("<b>" + i + "</b>" + (i === end ? "" : ", "));
+        }
+    }
+
+    document.write("</div>");
+    document.write("<br><button onclick='location.reload()'>Dobara Check Karein</button>");
+}
+
+generateCounting();
+document.write("<br>"+ "<br>")
+
+// ANSER N0 8
+
+function calculateArea(width, height) {
+    return width * height;
+}
+
+console.log("Area (values): " + calculateArea(10, 5));
+
+let w = 20;
+let h = 10;
+ document.write("Area (variables): " + calculateArea(w, h));
+  document.write("<br>"+ "<br>")
+
+// ANSER N0 9
+
+function isPalindrome(str) {
+  
+    let cleanStr = str.toLowerCase();
+    
+  
+    let reversedStr = cleanStr.split('').reverse().join('');
+    
+    return cleanStr === reversedStr;
+}
+
+ document.write(isPalindrome("madam"));
+   document.write("<br>"+ "<br>")
+ document.write(isPalindrome("hello")); 
+  document.write("<br>"+ "<br>")
+
+// ANSER N0 10
+
+function capitalizeWords(str) {
+    let words = str.split(' ');
+    
+    for (let i = 0; i < words.length; i++) {
+  
+        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+    }
+    
+    return words.join(' ');
+}
+
+let input = 'the quick brown fox';
+ document.write(capitalizeWords(input)); // "The Quick Brown Fox"
+  document.write("<br>"+ "<br>")
+
+// ANSER N0 11
+
+function findLongestWord(str) {
+    // Split the string into an array of words
+    let words = str.split(' ');
+    let longestWord = "";
+
+    for (let i = 0; i < words.length; i++) {
+        // If current word is longer than the stored longestWord, update it
+        if (words[i].length > longestWord.length) {
+            longestWord = words[i];
+        }
+    }
+
+    return longestWord;
+}
+
+// Example usage:
+document.write(findLongestWord('Web Development Tutorial')); 
+// Output: 'Development'
+
+// ANSER N0 12
+
+
+function countLetter(str, letter) {
+    let count = 0;
+    
+    // Loop through the string
+    for (let i = 0; i < str.length; i++) {
+        // Check if current character matches the letter (case-sensitive)
+        if (str.charAt(i) === letter) {
+            count++;
+        }
+    }
+    
+    return count;
+}
+
+// Example usage:
+document.write(countLetter('JSResourceS.com', 'o')); 
+// Output: 2
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

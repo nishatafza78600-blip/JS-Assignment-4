@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 39 to 40</title>
+</head>
+<body>
+    <script>
+///////// ANSWER NO 1
+
+
+function power(a, b) {
+
+  if (b === 0) return 1;
+  
+  let result = 1;
+
+  for (let i = 0; i < b; i++) {
+    result *= a;
+  }
+  
+  return result;
+}
+
+document.writeln(power(2, 3)); 
+document.writeln("<br>"); 
+document.writeln(power(5, 2));
+document.writeln("<br>"); 
+
+///////// ANSWER NO 2
+
+function isLeapYear(year) {
+ 
+  if (year % 4 === 0) {
+
+    if (year % 100 === 0) {
+      return year % 400 === 0;
+    }
+  
+    return true;
+  }
+
+  return false;
+}
+
+
+const inputYear = 2024; 
+if (isLeapYear(inputYear)) {
+  document.writeln(`${inputYear} is a leap year.`);
+} else {
+  document.writeln(`${inputYear} is not a leap year.`);
+}
+document.writeln("<br>"); 
+///////// ANSWER NO 3
+
+
+function calculateS(a, b, c) {
+    return (a + b + c) / 2;
+}
+
+function calculateArea(a, b, c) {
+    let S = calculateS(a, b, c);
+    let area = Math.sqrt(S * (S - a) * (S - b) * (S - c));
+    return area;
+}
+
+document.writeln("Area of Triangle:", calculateArea(5, 6, 7));
+document.writeln("<br>"); 
+
+///////// ANSWER NO 4
+
+function getAverage(m1, m2, m3) {
+    return (m1 + m2 + m3) / 3;
+}
+
+function getPercentage(m1, m2, m3) {
+    let total = m1 + m2 + m3;
+    return (total / 300) * 100; 
+}
+
+function mainFunction(m1, m2, m3) {
+    let avg = getAverage(m1, m2, m3);
+    let perc = getPercentage(m1, m2, m3);
+    
+    document.writeln("Average Marks:", avg.toFixed(2));
+   document.writeln("Percentage:", perc.toFixed(2) + "%");
+}
+
+mainFunction(85, 90, 78);
+document.writeln("<br>"); 
+
+
+///////// ANSWER NO 5
+
+function customIndexOf(string, char) {
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] === char) {
+            return i; // Found it! Return the index
+        }
+    }
+    return -1; 
+}
+
+document.writeln("Index of 'e':", customIndexOf("hello", "e")); // Output: 1
+
+///////// ANSWER NO 6
+
+function removeVowels(sentence) {
+    let result = "";
+    let vowels = "aeiouAEIOU";
+
+    for (let i = 0; i < sentence.length; i++) {
+      
+        if (!vowels.includes(sentence[i])) {
+            result += sentence[i];
+        }
+    }
+    return result;
+}
+
+let mySentence = "Hello World";
+document.writeln("Without Vowels:", removeVowels(mySentence));
+document.writeln("<br>"); 
+
+
+
+
+ ///////// ANSWER NO 7
+ 
+function countVowelPairs(text) {
+  let count = 0;
+  const vowels = "aeiouAEIOU";
+
+  for (let i = 0; i < text.length - 1; i++) {
+    const char1 = text[i];
+    const char2 = text[i + 1];
+
+    switch (true) {
+      case vowels.includes(char1) && vowels.includes(char2):
+        count++;
+        break;
+      default:
+    
+        break;
+    }
+  }
+
+  return count;
+}
+
+
+const sentence = "The queen ate a quiet meal at the zoo.";
+document.writeln(`Number of successive vowels: ${countVowelPairs(sentence)}`); 
+document.writeln("<br>"); 
+
+
+
+///////// ANSWER NO 8
+
+function convertDistance() {
+    var km = parseFloat(prompt("Enter distance between two cities in km:"));
+
+    function toMeters(k) {
+        var m = k * 1000;
+        document.writeln(k + " km is " + m + " meters.");
+        document.writeln("<br>"); 
+    }
+
+    function toFeet(k) {
+        var ft = k * 3280.84;
+       document.writeln(k + " km is " + ft.toFixed(2) + " feet.");
+       document.writeln("<br>"); 
+    }
+
+    function toInches(k) {
+        var inch = k * 39370.1;
+        document.writeln(k + " km is " + inch.toFixed(2) + " inches.");
+        document.writeln("<br>"); 
+    }
+
+    function toCentimeters(k) {
+        var cm = k * 100000;
+        document.writeln(k + " km is " + cm + " centimeters.");
+        document.writeln("<br>"); 
+    }
+
+  
+    toMeters(km);
+    toFeet(km);
+    toInches(km);
+    toCentimeters(km);
+}
+
+// Run the function
+ convertDistance();
+
+
+///////// ANSWER NO 9
+
+
+function calculateOvertime() {
+    var hoursWorked = parseInt(prompt("Enter total hours worked by the employee:"));
+    var overtimeRate = 12.00;
+    var standardHours = 40;
+
+    if (hoursWorked > standardHours) {
+        var overtimeHours = hoursWorked - standardHours;
+        var overtimePay = overtimeHours * overtimeRate;
+        document.writeln("Total Overtime Pay: Rs. " + overtimePay.toFixed(2));
+    } else {
+       document.writeln("No overtime pay. Hours worked are 40 or less.");
+       document.writeln("<br>"); 
+    }
+}
+
+ calculateOvertime();
+
+
+
+
+///////// ANSWER NO 10
+
+function withdrawCash() {
+    var amount = parseInt(prompt("Enter amount to withdraw (e.g., 470):"));
+ 
+    var notes100 = Math.floor(amount / 100);
+    var remainingAmount = amount % 100;
+
+    var notes50 = Math.floor(remainingAmount / 50);
+    remainingAmount = remainingAmount % 50;
+
+    var notes10 = Math.floor(remainingAmount / 10);
+
+   document.writeln("You will have " + notes100 + " hundred notes, " + 
+                notes50 + " fifty notes, and " + 
+                notes10 + " ten notes.");
+                document.writeln("<br>"); 
+}
+
+
+ withdrawCash();
+
+
+    </script>
+</body>
+</html>
